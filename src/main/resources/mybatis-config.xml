@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+    </settings>
+    <typeAliases>
+        <package name="tk.mybatis.simple.model"/>
+    </typeAliases>
+    <environments default="dev">
+        <environment id="dev">
+            <transactionManager type="JDBC">
+
+            </transactionManager>
+            <dataSource type="UNPOOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://192.168.159.131:3306/mybatis"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+
+        <package name="tk.mybatis.simple.mapper"/>
+        <!-- 可代替如下包配置
+        <mapper resource="tk/mybatis/simple/mapper/CountryMapper.xml"></mapper>
+        <mapper resource="tk/mybatis/simple/mapper/SysPrivilegeMapper.xml"></mapper>
+        <mapper resource="tk/mybatis/simple/mapper/SysRoleMapper.xml"></mapper>
+        <mapper resource="tk/mybatis/simple/mapper/SysRolePrivilegeMapper.xml"></mapper>
+        <mapper resource="tk/mybatis/simple/mapper/SysUserMapper.xml"></mapper>
+        <mapper resource="tk/mybatis/simple/mapper/SysUserRoleMapper.xml"></mapper>-->
+
+    </mappers>
+</configuration>
